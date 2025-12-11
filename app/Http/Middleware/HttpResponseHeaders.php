@@ -34,7 +34,7 @@ class HttpResponseHeaders
                 "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://code.jquery.com https://www.google.com https://www.gstatic.com; " .
                 "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net; " .
                 "style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net; " .
-                "img-src 'self' data:; " .
+                "img-src 'self' data: https://fluxui.dev; " .
                 "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.bunny.net data:; " .
                 "connect-src 'self' https://ka-f.fontawesome.com https://www.google.com https://www.gstatic.com; " .
                 "frame-src 'self' https://www.google.com https://www.gstatic.com; " .
