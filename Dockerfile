@@ -24,7 +24,7 @@
 
     # Install PHP dependencies (with artisan available)
     # RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
-    RUN composer install
+    RUN composer install --no-dev --optimize-autoloader
 
     # Install Node & NPM deps (for Vite + Tailwind)
     RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
@@ -34,6 +34,11 @@
 
     EXPOSE 8080
 
+    CMD ["php", "artisan", "key:generate"]
+    CMD ["php", "artisan", "config:clear"]
+    CMD ["php", "artisan", "cache:clear"]
+    CMD ["php", "artisan", "route:clear"]
+    CMD ["php", "artisan", "view:clear"]
     CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
     # COPY entrypoint.sh /usr/local/bin/entrypoint.sh
     # RUN chmod +x /usr/local/bin/entrypoint.sh
