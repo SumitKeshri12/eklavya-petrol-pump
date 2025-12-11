@@ -14,6 +14,10 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->redirectUsersTo(AppServiceProvider::HOME);
         $middleware->redirectGuestsTo('/');
+
+        // Trust proxies (Railway, Cloudflare, etc.)
+        $middleware->trustProxies(at: '*');
+
         $middleware->append([
             App\Http\Middleware\HttpResponseHeaders::class,
             Illuminate\Http\Middleware\HandleCors::class,
