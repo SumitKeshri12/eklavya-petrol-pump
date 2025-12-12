@@ -30,16 +30,10 @@
     RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
         && apt-get install -y nodejs \
         && npm install \
-        && npm run build \
-        && php artisan optimize:clear \
-        && php artisan config:cache \
-        && php artisan route:cache \
-        && php artisan event:cache \
-        && php artisan view:cache
+        && npm run build
 
     EXPOSE 8080
 
-    CMD ["php", "artisan", "key:generate"]
     CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
     # COPY entrypoint.sh /usr/local/bin/entrypoint.sh
     # RUN chmod +x /usr/local/bin/entrypoint.sh
