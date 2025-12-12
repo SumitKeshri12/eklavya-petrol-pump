@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->trustProxies(at: '*');
 
         $middleware->append([
-            App\Http\Middleware\HttpResponseHeaders::class,
+            //App\Http\Middleware\HttpResponseHeaders::class,
             Illuminate\Http\Middleware\HandleCors::class,
         ]);
 
