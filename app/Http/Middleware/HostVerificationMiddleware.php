@@ -20,6 +20,7 @@ class HostVerificationMiddleware
             'localhost',
             '127.0.0.1',
             'eklavya-petrol-pump-production.up.railway.app',
+            'eklavya-petrol-pump-production-8880.up.railway.app',
             '192.168.5.64',
         ];
 
