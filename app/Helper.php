@@ -568,7 +568,7 @@ class Helper
     public static function getAllUser()
     {
         return Cache::rememberForever('getAllUser', function () {
-            return User::pluck('first_name', 'id')->toArray();
+            return User::pluck('first_name', 'id')->take(10)->toArray();
         });
     }
 

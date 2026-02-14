@@ -34,11 +34,6 @@
 
     EXPOSE 8080
 
-    CMD ["php", "artisan", "key:generate"]
-    CMD ["php", "artisan", "config:clear"]
-    CMD ["php", "artisan", "cache:clear"]
-    CMD ["php", "artisan", "route:clear"]
-    CMD ["php", "artisan", "view:clear"]
     CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
     # COPY entrypoint.sh /usr/local/bin/entrypoint.sh
     # RUN chmod +x /usr/local/bin/entrypoint.sh

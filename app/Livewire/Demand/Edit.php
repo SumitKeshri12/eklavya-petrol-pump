@@ -91,10 +91,10 @@ class Edit extends Component
             abort(Response::HTTP_NOT_FOUND);
         }
 
+
         $this->users = Helper::getAllUser();
-        $this->shifts = \App\Models\Shift::all();
-        $this->dispenser_nozzles = \App\Models\DispenserNozzle::all();
-        $this->products = \App\Models\Product::all();
+        $this->products =  Helper::getAllProduct();
+        
         $DemandProductInfo = DemandProduct::select('product_id', 'quantity', 'id')->where('demand_id', $id)->get();
         if ($DemandProductInfo->isNotEmpty()) {
             foreach ($DemandProductInfo as $index => $addInfo) {

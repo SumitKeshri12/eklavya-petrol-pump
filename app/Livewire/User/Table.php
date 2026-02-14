@@ -161,9 +161,7 @@ final class Table extends PowerGridComponent
         $this->showCheckBox();
 
         return [
-
             PowerGrid::header(),
-
             PowerGrid::footer()
                 ->showPerPage($this->perPage, $this->perPageValues)
                 ->showRecordCount(),
